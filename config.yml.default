@@ -1,4 +1,4 @@
-token: "xxxxxxxxxxxxxxxx"    # Lichess OAuth2 Token.
+token: "lip_oMbt7gMIWVdhLdJc1OiV"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -79,7 +79,7 @@ engine:                      # Engine settings.
 abort_time: 20               # Time to abort a game in seconds when there is no activity.
 fake_think_time: false       # Artificially slow down the bot to pretend like it's thinking.
 rate_limiting_delay: 0       # Time (in ms) to delay after sending a move to prevent "Too Many Requests" errors.
-move_overhead: 2000          # Increase if your bot flags games too often.
+move_overhead: 5000          # Increase if your bot flags games too often.
 
 correspondence:
     move_time: 60            # Time in seconds to search in correspondence games.
@@ -90,14 +90,14 @@ correspondence:
 challenge:                   # Incoming challenges.
   concurrency: 1             # Number of games to play simultaneously.
   sort_by: "best"            # Possible values: "best" and "first".
-  accept_bot: false          # Accepts challenges coming from other bots.
-  only_bot: false            # Accept challenges by bots only.
-  max_increment: 180         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
+  accept_bot: true        # Accepts challenges coming from other bots.
+  only_bot: false           # Accept challenges by bots only.
+  max_increment: 5        # Maximum amount of increment to accept a challenge. The max is 5. Set to 0 for no increment.
   min_increment: 0           # Minimum amount of increment to accept a challenge.
-  max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
+  max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 30 (30 minutes).
   min_base: 0                # Minimum amount of base time to accept a challenge.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
-    - standard
+#    - standard
 #   - fromPosition
 #   - antichess
 #   - atomic
@@ -108,19 +108,19 @@ challenge:                   # Incoming challenges.
 #   - racingKings
 #   - threeCheck
   time_controls:             # Time controls to accept.
-    - bullet
-    - blitz
-    - rapid
+#    - bullet
+#    - blitz
+#    - rapid
 #   - classical
 #   - correspondence
   modes:                     # Game modes to accept.
-    - casual                 # Unrated games.
-    - rated                  # Rated games - must comment if the engine doesn't try to win.
+#    - casual                 # Unrated games.
+#    - rated                  # Rated games - must comment if the engine doesn't try to win.
 
 greeting:
     # Optional substitution keywords (include curly braces):
     #   {opponent} to insert opponent's name
     #   {me} to insert bot's name
     # Any other words in curly braces will be removed.
-    hello: "Hi! I'm {me}. Good luck! Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
-    goodbye: "Good game!" # Message to send to chat at the end of a game
+    hello: "Hello! Welcome to on of the Best Bot {me}! Made by @HeroReborn_Utsa. Good luck {@opponent}! Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
+    goodbye: "What a wonderful game it was ! Hope we meet soon!" # Message to send to chat at the end of a game
